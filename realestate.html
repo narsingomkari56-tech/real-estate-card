@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyline Realty - Premium Living</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* LUXURY COLOR PALETTE */
+            --primary: #0f172a;       /* Deep Navy Blue */
+            --gold: #d4af37;          /* Metallic Gold */
+            --white: #ffffff;
+            --bg: #f8f9fa;            /* Light Grey Background */
+            --text-dark: #333333;
+            
+            /* SHADOWS FOR DEPTH */
+            --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --btn-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            padding-bottom: 80px; /* Space for fixed button */
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            height: 220px;
+            background-image: url('https://images.unsplash.com/photo-1600596542815-2a4d9f6facb8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'); /* Luxury Villa Image */
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(15,23,42,0.3), rgba(15,23,42,0.8));
+        }
+
+        /* --- PROFILE / LOGO SECTION --- */
+        .profile-container {
+            text-align: center;
+            margin-top: -60px; /* Pulls it up into the hero image */
+            position: relative;
+            z-index: 10;
+        }
+
+        .profile-pic {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            object-fit: cover;
+            box-shadow: var(--card-shadow);
+            background: white;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin: 10px 0 5px 0;
+            color: var(--primary);
+        }
+
+        .tagline {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- ABOUT CARD --- */
+        .card {
+            background: var(--white);
+            margin: 20px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Gold underline decoration */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background: var(--gold);
+            margin: 5px auto 0;
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .check-icon {
+            color: var(--gold);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        /* --- CONTACT BUTTONS --- */
+        .btn-container {
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            border-radius: 50px; /* Pill shape */
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s;
+            box-shadow: var(--btn-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:active { transform: scale(0.98); }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            font-size: 1.1rem;
+            animation: pulse 2s infinite; /* THE PULSE EFFECT */
+        }
+
+        .btn-call {
+            background: var(--primary);
+            color: white;
+            border: 1px solid var(--primary);
+        }
+
+        .btn-insta {
+            background: white;
+            color: var(--primary);
+            border: 2px solid #e1e1e1;
+        }
+        
+        /* Instagram Gradient Text Hack */
+        .insta-text {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #999;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="profile-container">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile" class="profile-pic">
+        <h1 class="brand-name">Skyline Realty</h1>
+        <div class="tagline">Premium Living in Hyderabad</div>
+    </div>
+
+    <div class="card">
+        <h2 class="section-title">We Deal In</h2>
+        <div class="features-grid">
+            <div class="feature-item"><span class="check-icon">✓</span> Open Plots</div>
+            <div class="feature-item"><span class="check-icon">✓</span> Luxury Villas</div>
+            <div class="feature-item"><span class="check-icon">✓</span> Apartments</div>
+            <div class="feature-item"><span class="check-icon">✓</span> Farm Lands</div>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: #666; line-height: 1.5;">
+            Trusted by 500+ families. RERA Registered Agent. We handle complete documentation and loan processing.
+        </p>
+    </div>
+
+    <div class="btn-container">
+        <a href="https://wa.me/919876543210" class="btn btn-whatsapp">
+            <span style="margin-right: 8px">💬</span> Chat on WhatsApp
+        </a>
+
+        <a href="tel:+919876543210" class="btn btn-call">
+            <span style="margin-right: 8px">📞</span> Call Now
+        </a>
+
+        <a href="https://instagram.com" class="btn btn-insta">
+            <span style="margin-right: 8px">📷</span> <span class="insta-text">See Latest Projects</span>
+        </a>
+    </div>
+
+    <div class="footer">
+        © 2026 Skyline Realty • RERA: A1234567<br>
+        Designed by [Your Agency]
+    </div>
+
+</body>
+</html>
